@@ -1,0 +1,2 @@
+Allow: *.css
+Allow: *.js

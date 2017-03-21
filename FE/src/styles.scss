@@ -1,0 +1,24 @@
+#main-preload {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  top:50%;
+  left: 50%;
+  margin-top: -37.5px;
+  margin-left: -150px;
+  color: #F7BA4D;
+}
+
+.about-area .about-left-image {
+  &::before, &::after {display: none !important;}
+}
+
+.contact-area .contact-area-bg {
+  background-image: url("./img/footer-bg.jpg");
+}
