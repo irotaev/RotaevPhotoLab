@@ -18,7 +18,7 @@
     /*---------------------------
         SMOOTH SCROLL
     -----------------------------*/
-    $('ul#nav li a[href^="#"],a.navbar-brand,.slider-area h3 a,a.scrolltotop,.home-slider-button a').on('click', function (event) {
+    $('a.smooth-scroll-el, ul#nav li a[href^="#"],a.navbar-brand,.slider-area h3 a,a.scrolltotop,.home-slider-button a').on('click', function (event) {
         var id = $(this).attr("href");
         var offset = 40;
         var target = $(id).offset().top - offset;
