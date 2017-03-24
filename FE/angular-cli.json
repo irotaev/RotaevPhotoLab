@@ -18,9 +18,13 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+
+        "../bower_components/unitegallery/dist/css/unite-gallery.css"
       ],
       "scripts": [
+        "../bower_components/unitegallery/dist/js/unitegallery.min.js",
+        "../bower_components/unitegallery/dist/themes/tiles/ug-theme-tiles.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

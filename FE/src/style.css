@@ -1259,50 +1259,45 @@ ul.work-flow-navigation li.active a::after {
     color: #ffffff;
 }
 
-.subscriber-form form {
-    background: #fff none repeat scroll 0 0;
-    border-radius: 50px;
-    color: #363636;
-    height: 50px;
-    position: relative;
-    width: 100%;
-    text-align: center;
-}
+/*.subscriber-form form {*/
+    /*background: #fff none repeat scroll 0 0;*/
+    /*border-radius: 50px;*/
+    /*color: #363636;*/
+    /*height: 50px;*/
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+/*}*/
 
-.subscriber-form input {
-    border: 0 none;
-    border-radius: 50px 0 0 50px;
-    color: #363636;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 70%;
-}
+/*.subscriber-form input {*/
+    /*border: 0 none;*/
+    /*border-radius: 50px 0 0 50px;*/
+    /*color: #363636;*/
+    /*height: 100%;*/
+    /*left: 0;*/
+    /*position: absolute;*/
+    /*text-align: center;*/
+    /*top: 0;*/
+    /*width: 70%;*/
+/*}*/
 
-.subscriber-form button {
-    background: #363636 none repeat scroll 0 0;
-    border: 0 none;
-    border-left: 1px solid;
-    border-radius: 0 50px 50px 0;
-    height: 100%;
-    letter-spacing: 2px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30%;
-    text-transform: uppercase;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.subscriber-form button:hover {
-    background: #fff none repeat scroll 0 0;
-    color: #363636;
-}
+/*.subscriber-form button {*/
+    /*background: #363636 none repeat scroll 0 0;*/
+    /*border: 0 none;*/
+    /*border-left: 1px solid;*/
+    /*border-radius: 0 50px 50px 0;*/
+    /*height: 100%;*/
+    /*letter-spacing: 2px;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*width: 30%;*/
+    /*text-transform: uppercase;*/
+    /*-webkit-transition: 0.3s;*/
+    /*transition: 0.3s;*/
+    /*font-weight: 600;*/
+    /*color: #ffffff;*/
+/*}*/
 
 .subscriber-form label.error {
     display: inline-block;

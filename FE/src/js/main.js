@@ -75,21 +75,21 @@
     /*---------------------------
         ISOTOPE FILTERING ACTIVE
     -----------------------------*/
-    $('.portfolio-menu li').on("click",function () {
-        $(".portfolio-menu li").removeClass("active");
-        $(this).addClass("active");
-
-        var selector = $(this).attr('data-filter');
-        $(".portfolio-list").isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false,
-            }
-        });
-        return false;
-    });
+    //$('.portfolio-menu li').on("click",function () {
+    //    $(".portfolio-menu li").removeClass("active");
+    //    $(this).addClass("active");
+    //
+    //    var selector = $(this).attr('data-filter');
+    //    $(".portfolio-list").isotope({
+    //        filter: selector,
+    //        animationOptions: {
+    //            duration: 50,
+    //            easing: 'linear',
+    //            queue: false,
+    //        }
+    //    });
+    //    return false;
+    //});
 
 
     /*---------------------------
@@ -157,7 +157,7 @@
     /*---------------------------
         ISOTOPE ACTIVE ON LOAD
     -----------------------------*/
-    $(".portfolio-list").isotope({
-        itemSelector: '.single-items',
-        layoutMode: 'fitRows',
-    });
+    //$(".portfolio-list").isotope({
+    //    itemSelector: '.single-items',
+    //    layoutMode: 'fitRows',
+    //});
