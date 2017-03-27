@@ -722,7 +722,9 @@
               <button type="submit">Submit</button>
           </form>-->
 
-          <form id="mcf1" class="cta-form ">
+          <form id="mcf1" class="cta-form " (ngSubmit)="sendRequestToMe($event)">
+            <div class="form-blocker"><div class="text">Спасибо за обращение!<br/><br/>Я вам отвечу в самое ближайшее время</div></div>
+
             <div class="input-space"></div>
             <label class="mt10" for="mcn1"></label>
             <input name="name" type="text" class="in-name left" id="mcn1" placeholder="Ваше имя">
@@ -892,7 +894,7 @@
             <div class="member-img"><img src="img/team/marina_350x350.jpg" alt=""></div>
           </div>
           <div class="member-details">
-            <h3>Марина Симпсон</h3>
+            <h3>Марина</h3>
             <p class="member-title">Стилист-редактор</p>
             <p>
               Марина - наш прекрасный стилист и редактор. Она отвечает за образ и пост обработку, чтобы Ваша фотография сияла
@@ -900,10 +902,10 @@
           </div>
           <div class="member-social-bookmark">
             <ul>
-              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
-              <li><a href=""><i class="fa fa-skype"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+              <!--<li><a href=""><i class="fa fa-facebook"></i></a></li>-->
+              <!--<li><a href=""><i class="fa fa-twitter"></i></a></li>-->
+              <!--<li><a href=""><i class="fa fa-skype"></i></a></li>-->
+              <!--<li><a href=""><i class="fa fa-linkedin"></i></a></li>-->
             </ul>
           </div>
         </div>
@@ -911,19 +913,20 @@
       <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
         <div class="single-team wow fadeIn">
           <div class="member-name-and-image">
-            <div class="member-img"><img src="img/team/1.jpg" alt=""></div>
+            <div class="member-img"><img src="img/team/ira_350x350.jpg" alt=""></div>
           </div>
           <div class="member-details">
-            <h3>Smrity Moni</h3>
+            <h3>Ирина Алексеева</h3>
             <p class="member-title">Наш стилист-визажист</p>
             <p>Она создает образ модели. Важно, чтобы в кадре Вы выглядели не только красиво но и уместно</p>
           </div>
           <div class="member-social-bookmark">
             <ul>
-              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
-              <li><a href=""><i class="fa fa-skype"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100000766632341" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/i.o.alexeeva/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <!--<li><a href=""><i class="fa fa-twitter"></i></a></li>-->
+              <!--<li><a href=""><i class="fa fa-skype"></i></a></li>-->
+              <!--<li><a href=""><i class="fa fa-linkedin"></i></a></li>-->
             </ul>
           </div>
         </div>
@@ -1115,7 +1118,7 @@
             </ul>
           </div>
           <div class="price-button">
-            <a href="#">Записаться</a>
+            <a class="smooth-scroll-el" href="#contact" (click)="enrollToPhotoSet($event, 'tfp')" data-photoset="tfp">Записаться</a>
           </div>
         </div>
       </div>
@@ -1141,7 +1144,7 @@
             </ul>
           </div>
           <div class="price-button">
-            <a href="#">Записаться</a>
+            <a class="smooth-scroll-el" href="#contact" (click)="enrollToPhotoSet($event, 'photoset-gold')" data-photoset="photoset-gold">Записаться</a>
           </div>
         </div>
       </div>
@@ -1166,7 +1169,7 @@
             </ul>
           </div>
           <div class="price-button">
-            <a href="#">Записаться</a>
+            <a class="smooth-scroll-el" href="#contact" (click)="enrollToPhotoSet($event, 'photoset-normal')" data-photoset="photoset-normal">Записаться</a>
           </div>
         </div>
       </div>
@@ -1198,7 +1201,9 @@
               <button type="submit">Submit</button>
           </form>-->
 
-          <form id="mcf1" class="cta-form ">
+          <form id="mcf1" class="cta-form " (ngSubmit)="sendRequestToMe($event)">
+            <div class="form-blocker"><div class="text">Спасибо за обращение!<br/><br/>Я вам отвечу в самое ближайшее время</div></div>
+
             <div class="input-space"></div>
             <label class="mt10" for="mcn1"></label>
             <input name="name" type="text" class="in-name left" id="mcn1" placeholder="Ваше имя">
@@ -1239,7 +1244,7 @@
                 Москва
               </address>
               <p>Email: <a href="mailto:irotaev@gmail.com">irotaev@gmail.com</a></p>
-              <p>Phone: <a href="callto:+79164289256">(916) 428-9256</a></p>
+              <p>Phone: <a href="callto:+79164289256">+7 (916) 428-9256</a></p>
             </div>
             <div class="contact-social-bookmark wow fadeIn">
               <ul>
@@ -1261,7 +1266,9 @@
       <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
         <div class="single-contact form-area wow fadeIn">
           <div class="contact-form">
-            <form action="process.php" id="contact-form" method="post">
+            <form id="contact-form" method="post" (ngSubmit)="sendRequestToMe($event)">
+              <div class="form-blocker"><div class="text">Спасибо за обращение!<br/><br/>Я вам отвечу в самое ближайшее время</div></div>
+
               <div class="form-group" id="name-field">
                 <div class="form-input">
                   <input type="text" class="form-control" id="form-name" name="name" placeholder="Ваше имя" required>
@@ -1269,17 +1276,17 @@
               </div>
               <div class="form-group" id="email-field">
                 <div class="form-input">
-                  <input type="email" class="form-control" id="form-email" name="email" placeholder="Ваша почта [Email]" required>
+                  <input type="email" class="form-control" id="form-email" name="email" placeholder="Ваша почта [Email. Можно заполнить только телефон]">
                 </div>
               </div>
               <div class="form-group" id="phone-field">
                 <div class="form-input">
-                  <input type="text" class="form-control" id="form-phone" name="phone" placeholder="Ваш телефон [не обязательно]">
+                  <input type="text" class="form-control" id="form-phone" name="phone" placeholder="Ваш телефон [Можно заполнить только Email]">
                 </div>
               </div>
               <div class="form-group" id="message-field">
                 <div class="form-input">
-                  <textarea class="form-control" rows="6" id="form-message" name="message" placeholder="Сообщение [не обязательно]"></textarea>
+                  <textarea class="form-control" rows="6" id="form-message" name="message" placeholder="Сообщение [укажите, пожалуйста, тему сообщения]" required></textarea>
                 </div>
               </div>
               <div class="form-group">
@@ -1300,7 +1307,7 @@
     <div class="row">
       <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
         <div class="footer-copyright text-center wow fadeIn">
-          <p>2010-2017 | Copyright &copy; <a href="#"> PhotoLab</a> Все права защищены. Авторское право <a href="#">Rotaev Andrey</a></p>
+          <p>2010-2017 | Copyright &copy; <a href="javascript: return false;"> PhotoLab</a> Все права защищены. Авторское право <a href="javascript: return false;">Rotaev Andrey</a></p>
         </div>
       </div>
     </div>

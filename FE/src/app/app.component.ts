@@ -13,6 +13,8 @@ declare var $:JQueryStatic;
 })
 export class AppComponent implements AfterViewInit {
 
+  private get SEND_CONTACT_URL(): string {return 'contact/send'; }
+
   private _maxPhotoCount = 115;
   //private _imageGallery: any;
   private _imageGalleryStore: JQuery;
@@ -101,6 +103,74 @@ export class AppComponent implements AfterViewInit {
       tile_border_width:6,
       tile_border_color: "#f7ba4d"
     });
+  }
+
+
+  enrollToPhotoSet(event, photoSetId: string) {
+    var message: string = null;
+
+    if (photoSetId == 'tfp') {
+      message = 'Хочу записаться на TFP съемку';
+    }
+    else if (photoSetId == 'photoset-gold') {
+      message = 'Хочу записаться на Фотосет Gold съемку';
+    }
+    else if (photoSetId == 'photoset-normal') {
+      message = 'Хочу записаться на Фотосет съемку';
+    }
+
+    $("#contact").find("textarea#form-message").html(message);
+  }
+
+  sendRequestToMe(event) {
+    var target = event.target || event.srcElement || event.currentTarget;
+
+    var name = $(target).find("input[name='name']").val();
+    var contact = $(target).find("input[name='contact']").val();
+    var email = $(target).find("input[name='email']").val();
+    var phone = $(target).find("input[name='phone']").val();
+
+    if (!name) { alert("Заполните, пожалуйста, свое Имя"); return; }
+    if (!contact && !email && !phone) { alert("Заполните, пожалуйста, свой email или телефон"); return; }
+
+    var message: string;
+    if ($(target).find("textarea[name='message']").length) {
+      message = $(target).find("textarea[name='message']").val();
+
+      if (!message) { alert("Заполните, пожалуйста, сообщение. Вы можете просто указать \"Фотосессия\""); return; }
+    }
+
+    var data: any = {name: name};
+    if (phone && email)
+    {
+      data.phone = phone;
+      data.email = email;
+    }
+    else
+      data.contact = contact;
+
+    if (message) data.message = message;
+
+    //#region Отправка формы на сервер
+    $.ajax({
+      url: this.SEND_CONTACT_URL,
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      method: 'POST'
+    })
+      .done((data) => {
+      console.log(data);
+      })
+      .fail((xhr) => {
+        alert('Во время отправки сообщения произошла ошибка. Пожалуйста, отправьте сообщение еще раз или позвоните мне. Извиняюсь за неудобства');
+
+        $('.form-blocker').css({'display': 'block'}).fadeOut("slow");
+      });
+    //#endregion
+
+
+    $('.form-blocker').css({'display': 'block'}).fadeTo( "slow" , 1);
   }
 
 }
