@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+
+  .zoom-wrapper {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: black;
+    opacity: 0.7;
+    cursor: pointer;
+
+    .zoom-icon {
+      width: 40px;
+      height: 40px;
+      background: no-repeat url(../../img/zoom-icon.png);
+    }
+  }
+
+  .img-wrapper {
+    position: absolute;
+    box-sizing: border-box;
+    border: 5px rgba(122, 162, 255, 0.91) solid;
+  }
+  .img-wrapper:hover {
+    .zoom-wrapper {
+      display: flex;
+    }
+  }
+
+  .more-btn-wrapper {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .more-btn {
+      background-color: white;
+    }
+  }
+}

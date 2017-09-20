@@ -73,7 +73,7 @@ h5,
 h6 {
     margin: 0 0 15px;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Roboto, 'Montserrat', sans-serif;
 }
 
 html,
@@ -82,11 +82,15 @@ body {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.5em;
-    font-weight: 400;
+    font-family: Roboto, 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.55em;
+    font-weight: 200;
     color: #363636;
+}
+
+p {
+    opacity: 0.8;
 }
 
 a:hover {
@@ -119,13 +123,14 @@ input:-webkit-autofill:focus {
     color: #464646;
     display: inline-block;
     font-size: 36px;
-    font-weight: 300 !important;
+    font-weight: bold !important;
     letter-spacing: 1px;
     line-height: 1;
     margin-bottom: 40px;
     padding: 0 20px;
     position: relative;
     text-transform: uppercase;
+    font-family: Lato !important;
 }
 
 .area-title h2::before {
@@ -1227,7 +1232,7 @@ ul.work-flow-navigation li.active a::after {
 --------------------------------*/
 
 .subscriber-area {
-    color: #fff;
+    color: black;
     position: relative;
 }
 

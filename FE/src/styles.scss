@@ -1,3 +1,22 @@
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/lato-black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/lato-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato;
+  src: url("./fonts/lato-light.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
 #main-preload {
   position: absolute;
   width: 300px;
@@ -63,7 +82,7 @@
   color: #363636;
 }
 
-#photo-gallery__wrapper {
+.photo-gallery__wrapper {
   position: relative;
   overflow: hidden;
 

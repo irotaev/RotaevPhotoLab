@@ -1,0 +1,45 @@
+.svadba-photo {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  margin-top: 80px;
+  background-color: #F7BA4D;
+
+  .header {
+    padding-top: 20px;
+
+    .area-title {
+      margin-bottom: 40px;
+    }
+    .area-title span {
+      color: white;
+    }
+    .body-text {
+      position: relative;
+      color: #131313;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 42px;
+
+      .icon-left {
+        position: absolute;
+        width: 17px;
+        height: 15px;
+        bottom: 0;
+        left: 5px;
+
+        background: center no-repeat url("../img/svadba/rectangle-for-text.png");
+        transform: rotate(180deg);
+      }
+      .icon-right {
+        position: absolute;
+        width: 17px;
+        height: 15px;
+        top: 0;
+        right: 5px;
+
+        background: center no-repeat url("../img/svadba/rectangle-for-text.png");
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -15,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RotaevPhotoLabServer</RootNamespace>
     <AssemblyName>RotaevPhotoLabServer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -24,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,420 +42,62 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fe\css\animate.css" />
-    <Content Include="fe\css\bootstrap.min.css" />
-    <Content Include="fe\css\font-awesome.min.css" />
-    <Content Include="fe\css\magnific-popup.css" />
-    <Content Include="fe\css\normalize.css" />
-    <Content Include="fe\css\owl.carousel.css" />
-    <Content Include="fe\css\responsive.css" />
-    <Content Include="fe\favicon.ico" />
-    <Content Include="fe\fonts\fontawesome-webfont.svg" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fe\footer-bg.jpg" />
-    <Content Include="fe\img\about\my-photo-circle.jpg" />
-    <Content Include="fe\img\about\my-photo-circle_mini.jpg" />
-    <Content Include="fe\img\about\my-photo-mini.jpg" />
-    <Content Include="fe\img\about\my-photo.jpg" />
-    <Content Include="fe\img\favicon.png" />
-    <Content Include="fe\img\footer-bg.jpg" />
-    <Content Include="fe\img\footer_bg.jpg" />
-    <Content Include="fe\img\loading-wheel.gif" />
-    <Content Include="fe\img\logo.png" />
-    <Content Include="fe\img\photolab-logo.png" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -1.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -10.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -11.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -12.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -13.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -14.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -15.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -16.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -17.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -18.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -19.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -2.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -20.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -21.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -22.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -23.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -24.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -25.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -26.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -27.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -28.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -29.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -3.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -30.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -31.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -32.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -33.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -34.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -35.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -36.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -37.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -38.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -39.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -4.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -40.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -41.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -42.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -43.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -44.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -45.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -46.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -47.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -48.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -49.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -5.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -50.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -51.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -52.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -53.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -54.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -55.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -56.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -57.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -58.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -59.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -6.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -60.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -61.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -62.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -63.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -64.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -65.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -66.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -67.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -68.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -69.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -7.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -70.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -71.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -72.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -73.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -74.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -75.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -76.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -77.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -8.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion outdoor -9.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -100.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -101.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -102.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -103.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -104.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -105.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -106.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -107.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -108.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -109.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -110.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -111.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -112.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -113.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -114.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -115.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -116.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -117.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -78.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -79.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -80.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -81.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -82.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -83.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -84.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -85.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -86.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -87.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -88.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -89.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -90.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -91.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -92.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -93.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -94.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -95.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -96.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -97.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -98.jpg" />
-    <Content Include="fe\img\portfolio\big\fashion studio -99.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -1.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -10.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -11.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -12.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -13.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -14.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -15.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -16.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -17.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -18.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -19.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -2.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -20.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -21.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -22.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -23.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -24.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -25.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -26.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -27.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -28.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -29.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -3.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -30.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -31.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -32.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -33.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -34.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -35.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -36.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -37.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -38.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -39.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -4.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -40.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -41.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -42.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -43.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -44.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -45.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -46.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -47.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -48.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -49.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -5.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -50.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -51.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -52.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -53.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -54.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -55.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -56.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -57.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -58.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -59.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -6.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -60.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -61.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -62.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -63.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -64.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -65.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -66.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -67.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -68.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -69.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -7.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -70.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -71.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -72.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -73.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -74.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -75.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -76.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -77.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -8.jpg" />
-    <Content Include="fe\img\portfolio\fashion outdoor -9.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -100.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -101.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -102.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -103.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -104.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -105.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -106.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -107.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -108.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -109.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -110.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -111.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -112.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -113.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -114.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -115.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -116.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -117.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -78.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -79.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -80.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -81.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -82.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -83.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -84.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -85.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -86.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -87.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -88.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -89.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -90.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -91.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -92.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -93.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -94.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -95.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -96.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -97.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -98.jpg" />
-    <Content Include="fe\img\portfolio\fashion studio -99.jpg" />
-    <Content Include="fe\img\service\1.jpg" />
-    <Content Include="fe\img\service\2.jpg" />
-    <Content Include="fe\img\service\3.jpg" />
-    <Content Include="fe\img\service\r1.jpg" />
-    <Content Include="fe\img\service\r2.jpg" />
-    <Content Include="fe\img\service\r3.jpg" />
-    <Content Include="fe\img\slider\slide_1.jpg" />
-    <Content Include="fe\img\slider\slide_2.jpg" />
-    <Content Include="fe\img\slider\slide_3.jpg" />
-    <Content Include="fe\img\subscriber_area_bg.jpg" />
-    <Content Include="fe\img\team\1.jpg" />
-    <Content Include="fe\img\team\2.jpg" />
-    <Content Include="fe\img\team\marina_350x350.jpg" />
-    <Content Include="fe\img\team\my-photo_350x350.jpg" />
-    <Content Include="fe\img\testmonial\client-masha_300xXXX.jpg" />
-    <Content Include="fe\img\testmonial\client-nataliya_300xXXX.jpg" />
-    <Content Include="fe\img\testmonial\client-sveta_300xXXX.jpg" />
-    <Content Include="fe\img\testmonial\client_masha_r_300x300.jpg" />
-    <Content Include="fe\img\testmonial\testmonial_area_bg.jpg" />
-    <Content Include="fe\img\work\1.jpg" />
-    <Content Include="fe\img\work\2.jpg" />
-    <Content Include="fe\img\work\3.jpg" />
-    <Content Include="fe\img\work\4.jpg" />
-    <Content Include="fe\img\work\r1.jpg" />
-    <Content Include="fe\img\work\r2.jpg" />
-    <Content Include="fe\img\work\r3.jpg" />
-    <Content Include="fe\img\work\r4.jpg" />
-    <Content Include="fe\img\work\work_area_bg.jpg" />
-    <Content Include="fe\index.html" />
-    <Content Include="fe\inline.bundle.js" />
-    <Content Include="fe\js\contact-form.js" />
-    <Content Include="fe\js\isotope.pkgd.min.js" />
-    <Content Include="fe\js\jquery.ajaxchimp.js" />
-    <Content Include="fe\js\jquery.magnific-popup.min.js" />
-    <Content Include="fe\js\jquery.sticky.js" />
-    <Content Include="fe\js\main.js" />
-    <Content Include="fe\js\maps.active.js" />
-    <Content Include="fe\js\owl.carousel.min.js" />
-    <Content Include="fe\js\revolution\assets\coloredbg.png" />
-    <Content Include="fe\js\revolution\assets\gridtile.png" />
-    <Content Include="fe\js\revolution\assets\gridtile_3x3.png" />
-    <Content Include="fe\js\revolution\assets\gridtile_3x3_white.png" />
-    <Content Include="fe\js\revolution\assets\gridtile_white.png" />
-    <Content Include="fe\js\revolution\assets\loader.gif" />
-    <Content Include="fe\js\revolution\css\closedhand.cur" />
-    <Content Include="fe\js\revolution\css\layers.css" />
-    <Content Include="fe\js\revolution\css\navigation.css" />
-    <Content Include="fe\js\revolution\css\openhand.cur" />
-    <Content Include="fe\js\revolution\css\settings.css" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.actions.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.carousel.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.kenburn.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.migration.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.navigation.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.parallax.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.slideanims.min.js" />
-    <Content Include="fe\js\revolution\js\extensions\revolution.extension.video.min.js" />
-    <Content Include="fe\js\revolution\js\jquery.themepunch.revolution.min.js" />
-    <Content Include="fe\js\revolution\js\jquery.themepunch.tools.min.js" />
-    <Content Include="fe\js\slider-setting.js" />
-    <Content Include="fe\js\vendor\bootstrap.min.js" />
-    <Content Include="fe\js\vendor\jquery-1.12.4.min.js" />
-    <Content Include="fe\js\vendor\jquery-migrate-1.2.1.min.js" />
-    <Content Include="fe\js\vendor\jquery.easing.1.3.js" />
-    <Content Include="fe\js\vendor\modernizr-2.8.3.min.js" />
-    <Content Include="fe\js\wow.min.js" />
-    <Content Include="fe\loader-black2.gif" />
-    <Content Include="fe\loader-black3.gif" />
-    <Content Include="fe\loader-black4.gif" />
-    <Content Include="fe\loader-white2.gif" />
-    <Content Include="fe\loader-white3.gif" />
-    <Content Include="fe\loader_skype_trans.gif" />
-    <Content Include="fe\main.bundle.js" />
-    <Content Include="fe\polyfills.bundle.js" />
-    <Content Include="fe\robots.txt" />
-    <Content Include="fe\scripts.bundle.js" />
-    <Content Include="fe\style.css" />
-    <Content Include="fe\styles.bundle.js" />
-    <Content Include="fe\vendor.bundle.js" />
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Global.asax">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -462,45 +105,26 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Models\ErrorResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="packages.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fe\fonts\fontawesome-webfont.eot" />
-    <Content Include="fe\fonts\fontawesome-webfont.eot%40" />
-    <Content Include="fe\fonts\fontawesome-webfont.ttf" />
-    <Content Include="fe\fonts\fontawesome-webfont.woff" />
-    <Content Include="fe\fonts\fontawesome-webfont.woff2" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.eot%40" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fe\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fe\inline.bundle.map" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot%40" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot%40d7yf1v" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg%40d7yf1v" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf%40d7yf1v" />
-    <Content Include="fe\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff%40d7yf1v" />
-    <Content Include="fe\js\revolution\fonts\revicons\revicons.eot%405510888" />
-    <Content Include="fe\js\revolution\fonts\revicons\revicons.svg%405510888" />
-    <Content Include="fe\js\revolution\fonts\revicons\revicons.ttf%405510888" />
-    <Content Include="fe\js\revolution\fonts\revicons\revicons.woff%405510888" />
-    <Content Include="fe\main.bundle.map" />
-    <Content Include="fe\polyfills.bundle.map" />
-    <Content Include="fe\scripts.bundle.map" />
-    <Content Include="fe\styles.bundle.map" />
-    <Content Include="fe\vendor.bundle.map" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\smarterasp.net.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -537,7 +161,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

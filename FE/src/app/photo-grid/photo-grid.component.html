@@ -1,0 +1,33 @@
+<div class="wrapper" [style.width.px]="canvas.width" [style.height.px]="canvas.height">
+    <div *ngFor="let photo of canvas.photos"
+         [style.width.px]="photo.width"
+         [style.height.px]="photo.height"
+         [style.left.px]="photo.x"
+         [style.top.px]="photo.y"
+
+         class="img-wrapper"
+    >
+
+         <img src="/img/portfolio/{{photo.src}}"
+              [style.width.px]="photo.width - 10"
+              [style.height.px]="photo.height - 10"
+         />
+
+        <div class="zoom-wrapper">
+            <div class="zoom-icon"></div>
+        </div>
+    </div>
+
+    <!--<div *ngFor="let url of imgNames; let last = last;" class="img-wrapper">-->
+        <!--<img src="/img/portfolio/{{url}}" [class.last]="last" />-->
+    <!--</div>-->
+
+    <!--<masonry [options]="{gutter: 20, fitWidth: true}">-->
+        <!--<masonry-brick class="brick" *ngFor="let photo of canvas.photos">-->
+            <!--<img src="/img/portfolio/{{photo.src}}" [style.width.px]="photo.width" [style.height.px]="photo.height"/>-->
+        <!--</masonry-brick>-->
+    <!--</masonry>-->
+    <div class="more-btn-wrapper" id="gallery-more-btn-wrapper">
+        <a class="more-btn" href="#" (click)="moreBtnClick()">Показать еще</a>
+    </div>
+</div>
