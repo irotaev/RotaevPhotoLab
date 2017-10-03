@@ -45,7 +45,7 @@ namespace RotaevPhotoLabServer.Controllers
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
                 client.Host = "smtp.gmail.com";
-                client.Credentials = new NetworkCredential("Andrey.rtv@gmail.com", "8a95a1097271a763b4be923b5ea3deb3");
+                client.Credentials = new NetworkCredential("Andrey.rtv@gmail.com", "917848c8c3d4d083d9898a1d335179dc");
 
                 MailMessage mail = new MailMessage("autosendler@rotaevphotolab.ru", "irotaev@gmail.com");
                 mail.Subject = "Отправили запрос на фотосессию";

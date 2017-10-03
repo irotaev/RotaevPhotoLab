@@ -24,8 +24,8 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-
-        "../bower_components/unitegallery/dist/css/unite-gallery.css"
+        "../bower_components/unitegallery/dist/css/unite-gallery.css",
+        "../node_modules/material-design-icons/iconfont/material-icons.css"
       ],
       "scripts": [
         "../bower_components/unitegallery/dist/js/unitegallery.min.js",

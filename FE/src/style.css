@@ -154,6 +154,7 @@ input:-webkit-autofill:focus {
 .area-title h2 span {
     color: #f7ba4d;
     font-weight: 700;
+    line-height: 35px;
 }
 
 .area-title p {

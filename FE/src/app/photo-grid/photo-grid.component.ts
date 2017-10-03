@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ImgNames} from "../ImgNames";
+import {imgNamesSvadba} from '../imgNamesSvadba';
 import {Photo} from "./Photo";
 import {Canvas} from "./Canva";
 
@@ -11,6 +12,7 @@ import {Canvas} from "./Canva";
 export class PhotoGridComponent implements OnInit {
 
   public readonly imgNames: Array<string> = ImgNames;
+  public readonly imgNamesSvadba: Array<string> = imgNamesSvadba;
   public canvas: Canvas;
 
   private _lastInsertedPhotoIndex = 0;

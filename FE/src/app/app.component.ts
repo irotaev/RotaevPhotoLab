@@ -4,6 +4,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 import {ImgNames} from './ImgNames';
 import {ImgGallery} from "./imgGallery";
+import {imgNamesSvadba} from './imgNamesSvadba';
 
 declare var $:JQueryStatic;
 
@@ -24,6 +25,9 @@ export class AppComponent implements AfterViewInit {
   private _imageLastInedex: number = 0;
 
   private _imgsLeftToLoad: number = 0;
+
+  public imgNamesMain = ImgNames;
+  public imgNamesSvadba = imgNamesSvadba;
 
   ngAfterViewInit():void {
     var script = <any>document.createElement( "script" );

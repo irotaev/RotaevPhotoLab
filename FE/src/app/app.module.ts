@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PhotoGridComponent } from './photo-grid/photo-grid.component';
 import { MasonryModule } from 'angular2-masonry';
+import { SimplyComponentKitModule } from 'ng2_simply-component-kit/module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MasonryModule } from 'angular2-masonry';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MasonryModule
+    MasonryModule,
+    SimplyComponentKitModule
   ],
   providers: [],
   bootstrap: [AppComponent]
